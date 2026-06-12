@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espaço Alternativo Ivanei Marcante – Massoterapia & Quiropraxia em Cascavel</title>
+<meta name="description" content="Alívio real de dores com massoterapia e quiropraxia em Cascavel. Mais de 20 anos de experiência. Agende agora pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --verde: #1B3A2D;
+    --verde-medio: #2C5A43;
+    --verde-claro: #3D7A5C;
+    --bege: #F0E8D8;
+    --bege-escuro: #E0D4BE;
+    --dourado: #C4943A;
+    --dourado-claro: #D4A84A;
+    --branco: #FAFAF7;
+    --texto: #1A1A18;
+    --texto-suave: #4A4A42;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--branco);
+    color: var(--texto);
+    overflow-x: hidden;
+  }
+
+  /* ── BARRA FLUTUANTE TOPO ── */
+  .topbar {
+    background: var(--verde);
+    color: var(--bege);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    letter-spacing: .04em;
+  }
+  .topbar a { color: var(--dourado-claro); text-decoration: none; font-weight: 600; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,250,247,.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--bege-escuro);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 5%;
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 900;
+    color: var(--verde);
+    line-height: 1.1;
+  }
+  .logo span { display: block; font-size: 11px; font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: .12em; color: var(--texto-suave); text-transform: uppercase; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { font-size: 14px; color: var(--texto-suave); text-decoration: none; font-weight: 500; transition: color .2s; }
+  .nav-links a:hover { color: var(--verde); }
+  .nav-cta {
+    background: var(--dourado);
+    color: var(--branco);
+    padding: 10px 22px; border-radius: 6px;
+    font-size: 14px; font-weight: 600;
+    text-decoration: none;
+    transition: background .2s, transform .15s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--dourado-claro); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 92vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    background: var(--verde);
+    overflow: hidden;
+  }
+  .hero-text {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 6% 80px 8%;
+    position: relative; z-index: 2;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(196,148,58,.18);
+    border: 1px solid rgba(196,148,58,.4);
+    color: var(--dourado-claro);
+    font-size: 12px; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; padding: 6px 14px; border-radius: 20px;
+    margin-bottom: 28px; width: fit-content;
+  }
+  .hero-badge::before { content: '⭐'; font-size: 11px; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 5.5vw, 68px);
+    font-weight: 900; line-height: 1.08;
+    color: var(--branco);
+    margin-bottom: 24px;
+  }
+  .hero h1 em { font-style: italic; color: var(--dourado-claro); }
+  .hero-sub {
+    font-size: 17px; line-height: 1.7;
+    color: rgba(240,232,216,.8);
+    margin-bottom: 40px; max-width: 460px;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #25D366; color: #fff;
+    padding: 16px 28px; border-radius: 8px;
+    font-size: 16px; font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,.35);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,.45); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1.5px solid rgba(240,232,216,.4); color: var(--bege);
+    padding: 15px 24px; border-radius: 8px;
+    font-size: 15px; font-weight: 500; text-decoration: none;
+    transition: border-color .2s, background .2s;
+  }
+  .btn-secondary:hover { border-color: var(--dourado); background: rgba(196,148,58,.1); }
+
+  /* Hero visual */
+  .hero-visual {
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    background: linear-gradient(135deg, var(--verde-medio) 0%, var(--verde) 100%);
+  }
+  .hero-visual::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 60% 40%, rgba(196,148,58,.15) 0%, transparent 60%);
+  }
+  .hands-svg { width: 80%; max-width: 420px; position: relative; z-index: 2; filter: drop-shadow(0 20px 60px rgba(0,0,0,.3)); }
+
+  /* Proof strip */
+  .proof-strip {
+    background: var(--bege);
+    padding: 18px 8%;
+    display: flex; gap: 40px; align-items: center; justify-content: center; flex-wrap: wrap;
+    border-bottom: 1px solid var(--bege-escuro);
+  }
+  .proof-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--texto-suave); }
+  .proof-item strong { color: var(--verde); font-weight: 700; font-size: 15px; }
+  .proof-dot { width: 4px; height: 4px; background: var(--bege-escuro); border-radius: 50%; }
+
+  /* ── DORES (Pain points) ── */
+  .dores { background: var(--branco); padding: 90px 8%; }
+  .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: .16em;
+    color: var(--dourado); text-transform: uppercase; margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 900; line-height: 1.15;
+    color: var(--verde); margin-bottom: 16px;
+  }
+  .section-title em { font-style: italic; color: var(--texto); }
+  .dores-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px; margin-top: 48px;
+  }
+  .dor-card {
+    background: var(--bege);
+    border-radius: 12px; padding: 28px 24px;
+    border-left: 3px solid var(--dourado);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .dor-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(27,58,45,.1); }
+  .dor-icon { font-size: 28px; margin-bottom: 12px; }
+  .dor-card h3 { font-size: 15px; font-weight: 700; color: var(--verde); margin-bottom: 6px; }
+  .dor-card p { font-size: 13.5px; color: var(--texto-suave); line-height: 1.6; }
+
+  /* ── SERVIÇOS ── */
+  .servicos { background: var(--verde); padding: 90px 8%; }
+  .servicos .section-title { color: var(--branco); }
+  .servicos .section-label { color: var(--dourado-claro); }
+  .servicos-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px; margin-top: 52px;
+  }
+  .servico-card {
+    background: var(--verde-medio);
+    border-radius: 14px; padding: 36px 28px;
+    border: 1px solid rgba(196,148,58,.2);
+    position: relative; overflow: hidden;
+    transition: transform .2s, border-color .2s;
+  }
+  .servico-card:hover { transform: translateY(-4px); border-color: rgba(196,148,58,.5); }
+  .servico-card::after {
+    content: ''; position: absolute; bottom: 0; right: 0;
+    width: 80px; height: 80px;
+    background: radial-gradient(circle, rgba(196,148,58,.1) 0%, transparent 70%);
+  }
+  .servico-num { font-size: 11px; font-weight: 700; letter-spacing: .1em; color: var(--dourado); margin-bottom: 16px; }
+  .servico-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700; color: var(--branco); margin-bottom: 12px;
+  }
+  .servico-card p { font-size: 14px; line-height: 1.7; color: rgba(240,232,216,.75); }
+  .servico-tag {
+    display: inline-block; margin-top: 18px;
+    background: rgba(196,148,58,.2); color: var(--dourado-claro);
+    font-size: 11px; font-weight: 600; letter-spacing: .08em;
+    padding: 4px 10px; border-radius: 20px;
+  }
+
+  /* ── SOBRE / CREDIBILIDADE ── */
+  .sobre {
+    background: var(--bege);
+    padding: 90px 8%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .sobre-text .section-title { margin-bottom: 20px; }
+  .sobre-text p { font-size: 15.5px; line-height: 1.8; color: var(--texto-suave); margin-bottom: 16px; }
+  .sobre-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 36px;
+  }
+  .stat-box {
+    background: var(--branco);
+    border-radius: 10px; padding: 22px 20px;
+    border-top: 3px solid var(--dourado);
+  }
+  .stat-box strong { display: block; font-family: 'Playfair Display', serif; font-size: 36px; color: var(--verde); font-weight: 900; line-height: 1; }
+  .stat-box span { font-size: 13px; color: var(--texto-suave); margin-top: 4px; display: block; }
+  .sobre-visual {
+    display: flex; align-items: center; justify-content: center;
+  }
+  .sobre-card {
+    background: var(--verde);
+    border-radius: 20px; padding: 48px 40px;
+    color: var(--branco); text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .sobre-card::before {
+    content: '"'; font-family: 'Playfair Display', serif;
+    font-size: 160px; line-height: 0;
+    position: absolute; top: 60px; left: 20px;
+    color: rgba(196,148,58,.15); font-weight: 900;
+  }
+  .sobre-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; line-height: 1.6; color: var(--bege); margin-bottom: 24px; position: relative; z-index: 2; }
+  .sobre-nome { font-size: 13px; font-weight: 600; color: var(--dourado-claro); letter-spacing: .08em; }
+  .sobre-cargo { font-size: 12px; color: rgba(240,232,216,.6); margin-top: 4px; }
+
+  /* ── DEPOIMENTOS ── */
+  .depoimentos { background: var(--branco); padding: 90px 8%; }
+  .dep-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px; margin-top: 52px;
+  }
+  .dep-card {
+    background: var(--bege);
+    border-radius: 14px; padding: 28px 24px;
+    position: relative;
+  }
+  .dep-stars { color: #F5A623; font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
+  .dep-text { font-size: 14.5px; line-height: 1.75; color: var(--texto-suave); font-style: italic; margin-bottom: 20px; }
+  .dep-author { display: flex; align-items: center; gap: 12px; }
+  .dep-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--verde); color: var(--branco);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 15px; flex-shrink: 0;
+  }
+  .dep-author strong { font-size: 14px; display: block; color: var(--texto); }
+  .dep-author span { font-size: 12px; color: var(--texto-suave); }
+  .google-badge { display: flex; align-items: center; gap: 5px; margin-top: 5px; }
+  .google-badge svg { width: 14px; height: 14px; }
+  .google-badge span { font-size: 11px; color: #5F6368; }
+
+  /* ── URGÊNCIA / CTA CENTRAL ── */
+  .urgencia {
+    background: linear-gradient(135deg, var(--verde) 0%, var(--verde-medio) 100%);
+    padding: 90px 8%; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .urgencia::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(196,148,58,.2) 0%, transparent 60%);
+  }
+  .urgencia-inner { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; }
+  .urgencia h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4.5vw, 52px);
+    font-weight: 900; color: var(--branco); margin-bottom: 16px;
+  }
+  .urgencia h2 em { font-style: italic; color: var(--dourado-claro); }
+  .urgencia p { font-size: 17px; color: rgba(240,232,216,.8); margin-bottom: 36px; line-height: 1.7; }
+  .urgencia-cta {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: #25D366; color: #fff;
+    padding: 20px 38px; border-radius: 10px;
+    font-size: 18px; font-weight: 700; text-decoration: none;
+    box-shadow: 0 8px 32px rgba(37,211,102,.4);
+    transition: transform .2s, box-shadow .2s;
+    margin-bottom: 20px;
+  }
+  .urgencia-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(37,211,102,.5); }
+  .urgencia-small { font-size: 13px; color: rgba(240,232,216,.55); }
+
+  /* ── LOCALIZAÇÃO ── */
+  .localizacao { background: var(--bege); padding: 90px 8%; }
+  .loc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-top: 48px; }
+  .loc-info h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--verde); margin-bottom: 24px; }
+  .loc-item { display: flex; gap: 14px; margin-bottom: 20px; }
+  .loc-item-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: var(--verde); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .loc-item-text strong { display: block; font-size: 14px; font-weight: 700; color: var(--texto); margin-bottom: 2px; }
+  .loc-item-text span { font-size: 13.5px; color: var(--texto-suave); line-height: 1.5; }
+  .map-embed { border-radius: 16px; overflow: hidden; box-shadow: 0 12px 48px rgba(27,58,45,.12); }
+  .map-embed iframe { width: 100%; height: 320px; border: none; display: block; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--texto);
+    padding: 48px 8% 32px;
+    color: rgba(250,250,247,.6);
+  }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; margin-bottom: 32px; }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--branco); }
+  .footer-logo span { display: block; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 400; color: rgba(250,250,247,.5); letter-spacing: .1em; }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-links a { font-size: 13px; color: rgba(250,250,247,.55); text-decoration: none; transition: color .2s; }
+  .footer-links a:hover { color: var(--dourado-claro); }
+  .footer-bottom { border-top: 1px solid rgba(250,250,247,.08); padding-top: 24px; font-size: 12.5px; text-align: center; }
+
+  /* WhatsApp flutuante */
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: #25D366;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 24px rgba(37,211,102,.45);
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+    animation: pulse-wa 2.5s infinite;
+  }
+  .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,.6); }
+  .wa-float svg { width: 30px; height: 30px; fill: #fff; }
+  @keyframes pulse-wa {
+    0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,.45); }
+    50% { box-shadow: 0 6px 36px rgba(37,211,102,.7), 0 0 0 8px rgba(37,211,102,.12); }
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-visual { min-height: 300px; }
+    .hero-text { padding: 60px 6%; }
+    .sobre { grid-template-columns: 1fr; gap: 40px; }
+    .loc-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .proof-strip { gap: 20px; }
+    .hero-actions { flex-direction: column; }
+    .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+  }
+  @media (max-width: 600px) {
+    .sobre-stats { grid-template-columns: 1fr 1fr; }
+    .footer-inner { flex-direction: column; text-align: center; }
+  }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- Barra de urgência -->
+<div class="topbar">
+  🕐 Agenda limitada esta semana — <a href="https://wa.me/5545999746926?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank">Reserve seu horário agora pelo WhatsApp</a>
+</div>
+
+<!-- Nav -->
+<nav>
+  <div class="logo">
+    Espaço Alternativo
+    <span>Ivanei Marcante</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#depoimentos">Avaliações</a></li>
+    <li><a href="#localizacao">Localização</a></li>
+  </ul>
+  <a class="nav-cta" href="https://wa.me/5545999746926?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank">
+    📲 Agendar Consulta
+  </a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-badge">⭐ 5.0 no Google · 7 Avaliações</div>
+    <h1>Chega de carregar<br><em>dor nas costas.</em></h1>
+    <p class="hero-sub">
+      Massoterapia e quiropraxia especializada em Cascavel. Tratamento personalizado que realmente alivia — desde a primeira sessão.
+    </p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5545999746926?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação%20gratuita." target="_blank" class="btn-primary">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Agendar Avaliação Grátis
+      </a>
+      <a href="tel:+5545999746926" class="btn-secondary">
+        📞 (45) 99974-6926
+      </a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <!-- Ilustração SVG de mãos terapêuticas -->
+    <svg class="hands-svg" viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg">
+      <!-- Fundo glowing -->
+      <defs>
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#C4943A" stop-opacity="0.2"/>
+          <stop offset="100%" stop-color="#C4943A" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="soft-shadow">
+          <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.3"/>
+        </filter>
+        <!-- Animação das ondas -->
+        <style>
+          .wave1 { animation: wave-pulse 2.8s ease-in-out infinite; transform-origin: center; }
+          .wave2 { animation: wave-pulse 2.8s ease-in-out infinite .4s; transform-origin: center; }
+          .wave3 { animation: wave-pulse 2.8s ease-in-out infinite .8s; transform-origin: center; }
+          @keyframes wave-pulse {
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.35; transform: scale(1.04); }
+          }
+          .float-body { animation: float-anim 4s ease-in-out infinite; }
+          @keyframes float-anim {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+          }
+          .sparkle { animation: sparkle-anim 2s ease-in-out infinite; }
+          .sparkle2 { animation: sparkle-anim 2s ease-in-out infinite .7s; }
+          @keyframes sparkle-anim {
+            0%, 100% { opacity: 0; transform: scale(.6); }
+            50% { opacity: 1; transform: scale(1); }
+          }
+        </style>
+      </defs>
+
+      <!-- Ondas de energia -->
+      <ellipse class="wave3" cx="200" cy="220" rx="170" ry="160" fill="none" stroke="#C4943A" stroke-width="1"/>
+      <ellipse class="wave2" cx="200" cy="220" rx="140" ry="130" fill="none" stroke="#C4943A" stroke-width="1.5"/>
+      <ellipse class="wave1" cx="200" cy="220" rx="110" ry="102" fill="none" stroke="#C4943A" stroke-width="2"/>
+
+      <!-- Círculo central glow -->
+      <circle cx="200" cy="220" r="90" fill="url(#glow)"/>
+
+      <g class="float-body" filter="url(#soft-shadow)">
+        <!-- Corpo deitado (simplificado) -->
+        <rect x="80" y="195" width="240" height="50" rx="25" fill="#2C5A43"/>
+        <!-- Cabeça -->
+        <circle cx="300" cy="220" r="28" fill="#3D7A5C"/>
+        <!-- Detalhe rosto -->
+        <circle cx="308" cy="215" r="4" fill="#2C5A43" opacity=".5"/>
+        <path d="M295 228 Q300 234 310 230" fill="none" stroke="#2C5A43" stroke-width="2" stroke-linecap="round"/>
+
+        <!-- Mão terapeuta esquerda -->
+        <g>
+          <ellipse cx="130" cy="188" rx="30" ry="14" fill="#C4943A" transform="rotate(-15 130 188)"/>
+          <!-- Dedos -->
+          <rect x="105" y="168" width="8" height="22" rx="4" fill="#D4A84A" transform="rotate(-20 105 168)"/>
+          <rect x="118" y="162" width="8" height="26" rx="4" fill="#D4A84A" transform="rotate(-12 118 162)"/>
+          <rect x="132" y="160" width="8" height="28" rx="4" fill="#D4A84A" transform="rotate(-5 132 160)"/>
+          <rect x="146" y="163" width="8" height="24" rx="4" fill="#D4A84A" transform="rotate(5 146 163)"/>
+          <rect x="157" y="172" width="7" height="20" rx="3.5" fill="#D4A84A" transform="rotate(15 157 172)"/>
+        </g>
+
+        <!-- Mão terapeuta direita -->
+        <g>
+          <ellipse cx="260" cy="188" rx="30" ry="14" fill="#C4943A" transform="rotate(15 260 188)"/>
+          <rect x="243" y="168" width="8" height="22" rx="4" fill="#D4A84A" transform="rotate(20 243 168)"/>
+          <rect x="258" y="162" width="8" height="26" rx="4" fill="#D4A84A" transform="rotate(12 258 162)"/>
+          <rect x="272" y="160" width="8" height="28" rx="4" fill="#D4A84A" transform="rotate(5 272 160)"/>
+          <rect x="285" y="163" width="8" height="24" rx="4" fill="#D4A84A" transform="rotate(-5 285 163)"/>
+          <rect x="296" y="172" width="7" height="20" rx="3.5" fill="#D4A84A" transform="rotate(-15 296 172)"/>
+        </g>
+      </g>
+
+      <!-- Estrelas / brilhos -->
+      <g class="sparkle">
+        <line x1="80" y1="100" x2="80" y2="116" stroke="#C4943A" stroke-width="2" stroke-linecap="round"/>
+        <line x1="72" y1="108" x2="88" y2="108" stroke="#C4943A" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <g class="sparkle2">
+        <line x1="320" y1="80" x2="320" y2="92" stroke="#D4A84A" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="314" y1="86" x2="326" y2="86" stroke="#D4A84A" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+      <g class="sparkle">
+        <line x1="350" y1="300" x2="350" y2="310" stroke="#C4943A" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="345" y1="305" x2="355" y2="305" stroke="#C4943A" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+
+      <!-- Label -->
+      <rect x="138" y="272" width="124" height="34" rx="17" fill="rgba(196,148,58,0.2)" stroke="rgba(196,148,58,0.5)" stroke-width="1"/>
+      <text x="200" y="294" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#D4A84A">Alívio desde a 1ª sessão</text>
+    </svg>
+  </div>
+</section>
+
+<!-- Prova social strip -->
+<div class="proof-strip">
+  <div class="proof-item"><strong>⭐ 5.0</strong> Google</div>
+  <div class="proof-dot"></div>
+  <div class="proof-item"><strong>+20 anos</strong> de experiência</div>
+  <div class="proof-dot"></div>
+  <div class="proof-item"><strong>Cascavel</strong> · Centro</div>
+  <div class="proof-dot"></div>
+  <div class="proof-item"><strong>Seg–Sex</strong> até 18h</div>
+</div>
+
+<!-- Dores / Pain points -->
+<section class="dores" id="servicos">
+  <div class="reveal">
+    <div class="section-label">Você se identifica?</div>
+    <h2 class="section-title">Sinais de que seu corpo<br><em>está pedindo ajuda</em></h2>
+  </div>
+  <div class="dores-grid">
+    <div class="dor-card reveal">
+      <div class="dor-icon">😣</div>
+      <h3>Dor nas costas que não passa</h3>
+      <p>Aquela dor constante que te acorda de noite ou piora depois de horas sentado no trabalho.</p>
+    </div>
+    <div class="dor-card reveal">
+      <div class="dor-icon">🤕</div>
+      <h3>Tensão no pescoço e ombros</h3>
+      <p>Rigidez que limita seus movimentos, causa dores de cabeça frequentes e prejudica sua rotina.</p>
+    </div>
+    <div class="dor-card reveal">
+      <div class="dor-icon">😴</div>
+      <h3>Estresse e cansaço crônico</h3>
+      <p>Corpo pesado, sono ruim e aquela sensação de que nunca descansa de verdade.</p>
+    </div>
+    <div class="dor-card reveal">
+      <div class="dor-icon">🦴</div>
+      <h3>Problemas posturais</h3>
+      <p>Coluna desalinhada, quadril torto ou dores que se espalham para pernas e braços.</p>
+    </div>
+    <div class="dor-card reveal">
+      <div class="dor-icon">🦵</div>
+      <h3>Torções e luxações</h3>
+      <p>Tornou o tornozelo, luxou o ombro ou sofreu uma entorse? Tratamento manual acelera a recuperação sem precisar só de repouso.</p>
+    </div>
+    <div class="dor-card reveal">
+      <div class="dor-icon">😬</div>
+      <h3>Torcicolo e rigidez cervical</h3>
+      <p>Acordou com o pescoço travado ou com dor que impede de virar a cabeça? O torcicolo tem solução rápida com o tratamento certo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Serviços -->
+<section class="servicos">
+  <div class="reveal">
+    <div class="section-label">O que oferecemos</div>
+    <h2 class="section-title" style="color:var(--branco)">Tratamentos que<br>transformam sua qualidade de vida</h2>
+  </div>
+  <div class="servicos-grid">
+    <div class="servico-card reveal">
+      <div class="servico-num">SERVIÇO 01</div>
+      <h3>Massoterapia</h3>
+      <p>Técnicas manuais terapêuticas que aliviam tensões musculares, melhoram a circulação e promovem relaxamento profundo. Cada sessão é adaptada às suas necessidades.</p>
+      <span class="servico-tag">✓ Resultado desde a 1ª sessão</span>
+    </div>
+    <div class="servico-card reveal">
+      <div class="servico-num">SERVIÇO 02</div>
+      <h3>Quiropraxia</h3>
+      <p>Ajustes precisos na coluna vertebral que restauram o alinhamento natural do corpo, eliminando dores e melhorando sua postura e mobilidade de forma duradoura.</p>
+      <span class="servico-tag">✓ Sem medicamentos</span>
+    </div>
+    <div class="servico-card reveal">
+      <div class="servico-num">SERVIÇO 03</div>
+      <h3>Torções & Luxações</h3>
+      <p>Tratamento especializado para torções e luxações articulares — tornozelo, joelho, ombro e punho. Redução da inflamação, recuperação do movimento e reabilitação segura sem cirurgia.</p>
+      <span class="servico-tag">✓ Recuperação acelerada</span>
+    </div>
+    <div class="servico-card reveal">
+      <div class="servico-num">SERVIÇO 04</div>
+      <h3>Torcicolo</h3>
+      <p>Alívio rápido e eficaz do torcicolo com técnicas manuais específicas que liberam a tensão cervical, restauram a amplitude de movimento do pescoço e eliminam a dor em poucas sessões.</p>
+      <span class="servico-tag">✓ Alívio imediato</span>
+    </div>
+    <div class="servico-card reveal">
+      <div class="servico-num">SERVIÇO 05</div>
+      <h3>Avaliação Personalizada</h3>
+      <p>Antes de qualquer tratamento, fazemos uma análise completa do seu histórico e necessidades para criar um protocolo exclusivo com resultados reais e duradouros.</p>
+      <span class="servico-tag">✓ Plano individualizado</span>
+    </div>
+  </div>
+</section>
+
+<!-- Sobre -->
+<section class="sobre" id="sobre">
+  <div class="sobre-text reveal">
+    <div class="section-label">Quem somos</div>
+    <h2 class="section-title">Mais de duas décadas<br><em>cuidando de pessoas</em></h2>
+    <p>O Espaço Alternativo Ivanei Marcante nasceu da vocação de cuidar. Com mais de 20 anos de prática em Cascavel, desenvolvemos uma abordagem que combina técnicas tradicionais com métodos modernos.</p>
+    <p>Cada paciente é único. Por isso, nossos tratamentos são sempre personalizados — porque não existe receita de bolo quando se trata do seu corpo e da sua saúde.</p>
+    <div class="sobre-stats">
+      <div class="stat-box">
+        <strong>20+</strong>
+        <span>Anos de experiência em Cascavel</span>
+      </div>
+      <div class="stat-box">
+        <strong>5.0</strong>
+        <span>Nota máxima no Google</span>
+      </div>
+      <div class="stat-box">
+        <strong>100%</strong>
+        <span>Atendimento personalizado</span>
+      </div>
+      <div class="stat-box">
+        <strong>2</strong>
+        <span>Especialidades: massoterapia e quiropraxia</span>
+      </div>
+    </div>
+  </div>
+  <div class="sobre-visual reveal">
+    <div class="sobre-card">
+      <p class="sobre-quote">A verdadeira saúde não é apenas a ausência de dor — é ter energia, mobilidade e qualidade de vida para aproveitar cada dia.</p>
+      <div class="sobre-nome">Ivanei Marcante</div>
+      <div class="sobre-cargo">Massoterapeuta & Quiropraxista · Cascavel, PR</div>
+    </div>
+  </div>
+</section>
+
+<!-- Depoimentos -->
+<section class="depoimentos" id="depoimentos">
+  <div class="reveal" style="text-align:center">
+    <div class="section-label">O que dizem nossos pacientes</div>
+    <h2 class="section-title">Avaliação 5.0 estrelas<br><em>no Google</em></h2>
+  </div>
+  <div class="dep-grid">
+    <div class="dep-card reveal">
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-text">"Atendimento excelente! Estava com dores nas costas há meses e após algumas sessões o alívio foi notável. Profissional muito dedicado e atencioso."</p>
+      <div class="dep-author">
+        <div class="dep-avatar">M</div>
+        <div>
+          <strong>Maria C.</strong>
+          <div class="google-badge">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.932z" fill="#4285F4"/></svg>
+            <span>Google</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dep-card reveal">
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-text">"Super indico! Ambiente tranquilo, profissional qualificado e tratamento que realmente funciona. Minhas dores de cabeça por tensão melhoraram muito."</p>
+      <div class="dep-author">
+        <div class="dep-avatar" style="background:var(--dourado)">J</div>
+        <div>
+          <strong>João P.</strong>
+          <div class="google-badge">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.932z" fill="#4285F4"/></svg>
+            <span>Google</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dep-card reveal">
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-text">"Lugar incrível! Fui com dor ciática que me limitava muito e saí caminhando bem melhor. O Ivanei tem um dom especial para o que faz."</p>
+      <div class="dep-author">
+        <div class="dep-avatar" style="background:var(--verde-claro)">A</div>
+        <div>
+          <strong>Ana L.</strong>
+          <div class="google-badge">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.932z" fill="#4285F4"/></svg>
+            <span>Google</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA urgência -->
+<section class="urgencia">
+  <div class="urgencia-inner reveal">
+    <h2>Pronto para <em>viver sem dor?</em></h2>
+    <p>Fale agora pelo WhatsApp e agende sua avaliação. Atendemos de segunda a sexta, até as 18h, no coração de Cascavel.</p>
+    <a href="https://wa.me/5545999746926?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação%20gratuita%20no%20Espaço%20Alternativo." target="_blank" class="urgencia-cta">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Quero Agendar pelo WhatsApp
+    </a>
+    <p class="urgencia-small">Ou ligue: (45) 99974-6926 · R. São Luís, 590 – Centro, Cascavel/PR</p>
+  </div>
+</section>
+
+<!-- Localização -->
+<section class="localizacao" id="localizacao">
+  <div class="reveal">
+    <div class="section-label">Onde estamos</div>
+    <h2 class="section-title">Fácil de chegar<br><em>no Centro de Cascavel</em></h2>
+  </div>
+  <div class="loc-grid">
+    <div class="loc-info reveal">
+      <div class="loc-item">
+        <div class="loc-item-icon">📍</div>
+        <div class="loc-item-text">
+          <strong>Endereço</strong>
+          <span>R. São Luís, 590 – Centro<br>Cascavel – PR, 85811-000</span>
+        </div>
+      </div>
+      <div class="loc-item">
+        <div class="loc-item-icon">📞</div>
+        <div class="loc-item-text">
+          <strong>Telefone</strong>
+          <span><a href="tel:+5545999746926" style="color:var(--verde);text-decoration:none">(45) 99974-6926</a></span>
+        </div>
+      </div>
+      <div class="loc-item">
+        <div class="loc-item-icon">🕐</div>
+        <div class="loc-item-text">
+          <strong>Horário de Atendimento</strong>
+          <span>Segunda a Sexta: até 18h<br>Sábados: consulte disponibilidade</span>
+        </div>
+      </div>
+      <div class="loc-item">
+        <div class="loc-item-icon">💬</div>
+        <div class="loc-item-text">
+          <strong>WhatsApp</strong>
+          <span><a href="https://wa.me/5545999746926" target="_blank" style="color:var(--verde);text-decoration:none;font-weight:600">Clique para conversar →</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="map-embed reveal">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3627.5!2d-53.4556!3d-24.9578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d40856cfc46f%3A0x4907d32750516ece!2sEspa%C3%A7o%20Alternativo%20Ivanei%20Marcante!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        Espaço Alternativo
+        <span>Ivanei Marcante · Massoterapia & Quiropraxia</span>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#depoimentos">Avaliações</a>
+      <a href="#localizacao">Localização</a>
+      <a href="https://wa.me/5545999746926" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2024 Espaço Alternativo Ivanei Marcante · R. São Luís, 590 – Centro, Cascavel/PR · (45) 99974-6926
+  </div>
+</footer>
+
+<!-- Botão WhatsApp flutuante -->
+<a href="https://wa.me/5545999746926?text=Olá!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" class="wa-float" aria-label="Chamar no WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+</script>
+
+</body>
+</html>
